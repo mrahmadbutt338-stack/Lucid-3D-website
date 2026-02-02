@@ -1,0 +1,315 @@
+/* ================== GLOBAL ================== */
+body{
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* ================== NAVBAR ================== */
+.website .navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.website .navbar .menu .menu-name{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.website .navbar .menu .menu-name .line{
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.website .navbar .menu:hover .menu-name .line{
+  width: 100%;
+}
+
+.website .navbar .menu .child-nav{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: none;
+}
+
+.website .navbar .menu .child-nav a{
+  margin: 20px 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+.website .navbar .menu .child-nav .line{
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.website .navbar .menu:hover .child-nav .line{
+  width: 100%;
+}
+
+.website .navbar .menu.active .child-nav{
+  display: block;
+}
+
+.website .navbar .menu.active .menu-name{
+  display: none;
+}
+/* .website .navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.website .navbar .menu .menu-name{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.website .navbar .menu .menu-name .line{
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* line hover fix */
+/* .website .navbar .menu-name:hover .line{
+  width: 100%;
+} */
+
+/* child nav */
+/* .website .navbar .menu .child-nav{
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  display: auto;        
+
+}
+
+.website .navbar .menu .child-nav a{
+  display: block;
+  margin: 15px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+/* active state */
+/* .website .navbar .menu.active .child-nav{
+  display: block;
+}
+
+.website .navbar .menu.active .menu-name{
+  display: none;
+} */
+
+/* line visible when active */
+.website .navbar .menu.active .menu-name .line{
+  width: 100%;
+} */ */
+
+
+
+/* ================== POINTER / CURSOR ================== */
+.website .pointer .cursor{
+  width: 13px;
+  height: 13px;
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.website .pointer .cursor-circle{
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.1s ease;
+}
+
+/* ================== HERO HEADING ================== */
+.website .heading{
+  color: gray;
+  font-size: 10rem;
+  margin-top: -160px;
+  margin-left: 20px;
+}
+
+.website .heading p{
+  font-size: 20px;
+  color: white;
+  margin-top: -215px;
+  margin-left: 44rem;
+}
+
+/* ================== POINTS ================== */
+.website .points{
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 30px;
+  margin-top: -300px;
+  margin-bottom: 150px;
+}
+
+.website .points .line{
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.website .points .box:hover .line{
+  width: 100%;
+}
+
+/* ================== PROJECT HEADINGS (ALL) ================== */
+.website .main-headings{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  padding: 2px 20px;
+}
+
+.website .main-headings .box1{
+  font-size: 100px;
+  font-weight: bold;
+  color: gray;
+  cursor: none;
+  transition: color 0.3s ease;
+}
+
+.website .main-headings:hover .box1{
+  color: white;
+}
+
+.website .main-headings .box2{
+  font-size: 20px;
+  color: white;
+  margin-top: 40px;
+}
+
+/* ================== HOVER IMAGE CARD ================== */
+.hover-card{
+  position: fixed;
+  width: 360px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.2s ease;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.hover-card img{
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* ================== CUSTOM CURSOR ================== */
+.custom-cursor{
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+  z-index: 100;
+}
+
+.custom-cursor span{
+  font-size: 10px;
+  opacity: 0;
+}
+
+/* ================== BUTTON ================== */
+.website .button button{
+  color: white;
+  padding: 6px 25px;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin: 30px;
+}
+
+.website .button button:hover{
+  background-color: white;
+  color: black;
+}
+
+/* ================== FOOTER ================== */
+.website .footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 300px;
+}
+
+.website .footer .image img{
+  width: 180px;
+  height: 180px;
+}
+
+.website .footer .box{
+  font-size: 20px;
+}
+
+.website .footer .box button{
+  color: white;
+  padding: 6px 15px;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin-top: 30px;
+}
+
+.website .footer .box button:hover{
+  background-color: white;
+  color: black;
+}
+
+/* ================== CHANNEL ================== */
+.website .channel{
+  margin-left: 40px;
+  font-size: 15px;
+  margin-top: 100px;
+}
+
+/* ================== LINKS ================== */
+.website .links{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.website .links ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ================== HR ================== */
+hr{
+  border: none;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
+}
