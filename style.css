@@ -1,3 +1,39 @@
+
+/* Loader styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b1aaa5; /* آپ تصویر میں جو gray تھا وہی */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* تمام elements کے اوپر رہے */
+}
+
+.loader-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loader-text {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+/* Fade-out animation for loader */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+
+
 /* ================== GLOBAL ================== */
 body{
   background-color: black;
@@ -6,120 +42,75 @@ body{
 }
 
 /* ================== NAVBAR ================== */
-.website .navbar{
+.navbar{
   display: flex;
   justify-content: space-between;
-  padding: 20px 30px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.website .navbar .menu .menu-name{
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.website .navbar .menu .menu-name .line{
-  width: 0;
-  height: 1px;
-  background-color: white;
-  transition: 0.3s;
-}
-
-.website .navbar .menu:hover .menu-name .line{
-  width: 100%;
-}
-
-.website .navbar .menu .child-nav{
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  display: none;
-}
-
-.website .navbar .menu .child-nav a{
-  margin: 20px 30px;
-  text-decoration: none;
-  color: white;
+  padding: 30px;
   font-size: 15px;
+  font-style: arial;
+}
+ .menu {
+  position: relative;
 }
 
-.website .navbar .menu .child-nav .line{
+/* MENU BUTTON */
+.menu-name {
+  cursor: pointer;
+  position: relative;
+}
+
+/* LINE UNDER MENU */
+.menu-name .line {
   width: 0;
   height: 1px;
-  background-color: white;
+  background: white;
   transition: 0.3s;
 }
 
-.website .navbar .menu:hover .child-nav .line{
+.menu-name:hover .line {
   width: 100%;
 }
 
-.website .navbar .menu.active .child-nav{
-  display: block;
+/* CHILD NAV (hidden by default) */
+.child-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  gap: 40px;
+  align-items: center;
 }
 
-.website .navbar .menu.active .menu-name{
-  display: none;
-}
-/* .website .navbar{
+/* SHOW MENU */
+.menu.active .child-nav {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 30px;
-  font-size: 20px;
-  font-weight: bold;
 }
 
-.website .navbar .menu .menu-name{
+/* HIDE MENU TEXT */
+.menu.active .menu-name {
+  display: none;
+}
+
+/* NAV LINKS */
+.child-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
   position: relative;
-  cursor: pointer;
-  display: inline-block;
 }
 
-.website .navbar .menu .menu-name .line{
+/* LINE UNDER EACH OPTION */
+.child-nav a .line {
   width: 0;
   height: 1px;
-  background-color: white;
+  background: white;
+  margin-top: 4px;
   transition: 0.3s;
 }
 
-/* line hover fix */
-/* .website .navbar .menu-name:hover .line{
+.child-nav a:hover .line {
   width: 100%;
-} */
-
-/* child nav */
-/* .website .navbar .menu .child-nav{
-  position: absolute;
-  top: 60px;
-  right: 30px;
-  display: auto;        
-
 }
-
-.website .navbar .menu .child-nav a{
-  display: block;
-  margin: 15px 0;
-  text-decoration: none;
-  color: white;
-  font-size: 15px;
-}
-
-/* active state */
-/* .website .navbar .menu.active .child-nav{
-  display: block;
-}
-
-.website .navbar .menu.active .menu-name{
-  display: none;
-} */
-
-/* line visible when active */
-.website .navbar .menu.active .menu-name .line{
-  width: 100%;
-} */ */
-
 
 
 /* ================== POINTER / CURSOR ================== */
@@ -131,6 +122,8 @@ body{
   position: fixed;
   pointer-events: none;
   z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .website .pointer .cursor-circle{
@@ -158,7 +151,7 @@ body{
 /* ================== POINTS ================== */
 .website .points{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 1px 30px;
   margin-top: -300px;
   margin-bottom: 150px;
@@ -230,14 +223,21 @@ body{
   justify-content: center;
   transition: 0.25s ease;
   z-index: 100;
+   mix-blend-mode: difference;
 }
 
 .custom-cursor span{
   font-size: 10px;
   opacity: 0;
 }
+.custom-cursor {
+  background: white;
+  border: none;
+}
+
 
 /* ================== BUTTON ================== */
+
 .website .button button{
   color: white;
   padding: 6px 25px;
@@ -245,12 +245,17 @@ body{
   border-radius: 20px;
   border: 1px solid white;
   margin: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .website .button button:hover{
   background-color: white;
   color: black;
 }
+
 
 /* ================== FOOTER ================== */
 .website .footer{
@@ -261,12 +266,12 @@ body{
 }
 
 .website .footer .image img{
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
 }
 
 .website .footer .box{
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .website .footer .box button{
@@ -276,6 +281,8 @@ body{
   border-radius: 20px;
   border: 1px solid white;
   margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .website .footer .box button:hover{
@@ -286,7 +293,7 @@ body{
 /* ================== CHANNEL ================== */
 .website .channel{
   margin-left: 40px;
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 100px;
 }
 
@@ -302,7 +309,7 @@ body{
   display: flex;
   list-style: none;
   gap: 30px;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -313,3 +320,49 @@ hr{
   background: #333;
   margin: 20px 0;
 }
+
+.cursor::before {
+  display: none; /* hide extra dot */
+}
+.cursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none; /* cursor interference روکنے کے لیے */
+    transform: translate(-50%, -50%); /* center cursor */
+    z-index: 9999; /* سب کے اوپر */
+      mix-blend-mode: difference;
+}
+
+.child-nav {
+  display: none;
+}
+
+.child-nav.active {
+  display: block;
+}
+
+/* ================== GLOBAL ================== */
+body{
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* ========== PAGE FADE ANIMATION ========== */
+
+.fade-page {
+  opacity: 0;
+}
+
+.fade-page.active {
+  opacity: 1;
+  transition: opacity 4s ease;
+}
+
+/* 🚫 BODY یا fade-page پر overflow hidden مت لگانا */
+
+

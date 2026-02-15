@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conatact</title>
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <main class="website fade-page">
+         <nav class="navbar">
+   <section class="logo">
+  <a href="index.html" class="logo-name">Cynthia Ugwu</a>
+</section>
+
+  <section class="menu" id="menuWrapper">
+    <!-- MENU BUTTON -->
+    <div class="menu-name" id="menuBtn">
+      MENU <span class="plus">+</span>
+      <div class="line"></div>
+    </div>
+
+    <!-- CLICK OPEN MENU -->
+    <div class="child-nav" id="childNav">
+      <a href="#">WORK<div class="line"></div></a>
+      <a href="#">PLAYGROUND<div class="line"></div></a>
+      <a href="#">CONTACT<div class="line"></div></a>
+    </div>
+  </section>
+
+  
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+</nav>
+<section class="contact-section">
+
+  <div class="contact-box">
+
+    <!-- LEFT CONTENT -->
+    <div class="contact-left">
+      <p class="small-title">CONTACT US</p>
+      <h1>Get in Touch<br>with Us</h1>
+      <p class="desc">
+        We’re here to help. Whether you’re interested in learning more about our
+        services or need support, we’re happy to assist you.
+      </p>
+
+      <ul class="features">
+        <li>✔ Reliable Delivery</li>
+        <li>✔ Comprehensive Token & Digest</li>
+        <li>✔ Customizable Notifications</li>
+        <li>✔ Real-Time Updates</li>
+        <li>✔ Seamless Integration</li>
+      </ul>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +1 415-555-0199</p>
+        <p><strong>Email:</strong> contact@company.com</p>
+        <p><strong>Location:</strong> San Francisco, CA</p>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-right">
+      <form>
+        <div class="row">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+        </div>
+
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Company Name">
+
+        <select>
+          <option>Select one</option>
+          <option>Developer</option>
+          <option>Designer</option>
+          <option>Business</option>
+        </select>
+
+        <textarea placeholder="Write your message..."></textarea>
+
+        <label class="checkbox">
+          <input type="checkbox">
+          I agree to the <span>Terms of Use</span> & <span>Privacy Policy</span>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+ <section class="links">
+        <div class="box1">
+          <ul>
+            <li>© 2026</li>
+            <li>10:40 AM ET</li>
+          </ul>
+        </div>
+        <div class="box2">
+          <ul>
+            <li>LINKDIN</li>
+            <li>X/TWITTER</li>
+            <li>INSTAGRAM</li>
+            <li>YOUTUBE</li>
+          </ul>
+        </div>
+      </section>
+
+</main>
+
+ 
+<script>
+            const menuBtn = document.getElementById("menuBtn");
+const menuWrapper = document.getElementById("menuWrapper");
+const childNav = document.getElementById("childNav");
+
+/* OPEN MENU */
+menuBtn.addEventListener("click", () => {
+  menuWrapper.classList.add("active");
+});
+
+/* CLOSE MENU ON OPTION CLICK */
+childNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuWrapper.classList.remove("active");
+  });
+});
+
+
+
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorCircle = document.querySelector(".cursor-circle");
+
+let mouseX = 0;
+let mouseY = 0;
+let circleX = 0;
+let circleY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  cursorDot.style.left = mouseX + "px";
+  cursorDot.style.top = mouseY + "px";
+});
+function animateCircle() {
+  circleX += (mouseX - circleX) * 0.15;
+  circleY += (mouseY - circleY) * 0.15;
+
+  cursorCircle.style.left = circleX + "px";
+  cursorCircle.style.top = circleY + "px";
+
+  requestAnimationFrame(animateCircle);
+}
+
+animateCircle();
+
+
+
+// fade activate
+window.addEventListener("load", () => {
+  document.querySelector(".fade-page").classList.add("active");
+});
+
+// cursor follow
+const cursor = document.querySelector(".cursor");
+const circle = document.querySelector(".cursor-circle");
+
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
+
+  circle.style.left = x + "px";
+  circle.style.top = y + "px";
+});
+
+</script>
+</body>
+</html>

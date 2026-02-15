@@ -1,0 +1,277 @@
+body{
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.website .navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 19px;
+  font-style: arial;
+}
+ .menu {
+  position: relative;
+}
+
+/* MENU BUTTON */
+.menu-name {
+  cursor: pointer;
+  position: relative;
+}
+
+/* LINE UNDER MENU */
+.menu-name .line {
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: 0.3s;
+}
+
+.menu-name:hover .line {
+  width: 100%;
+}
+
+/* CHILD NAV (hidden by default) */
+.child-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  gap: 40px;
+  align-items: center;
+}
+
+/* SHOW MENU */
+.menu.active .child-nav {
+  display: flex;
+}
+
+/* HIDE MENU TEXT */
+.menu.active .menu-name {
+  display: none;
+}
+
+/* NAV LINKS */
+.child-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+}
+
+/* LINE UNDER EACH OPTION */
+.child-nav a .line {
+  width: 0;
+  height: 1px;
+  background: white;
+  margin-top: 4px;
+  transition: 0.3s;
+}
+
+.child-nav a:hover .line {
+  width: 100%;
+}
+
+/* ===== CUSTOM CURSOR DOT ===== */
+.cursor-dot {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== CURSOR CIRCLE ===== */
+.cursor-circle {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+   mix-blend-mode: difference;
+}
+.cursor-circle {
+  background: white;
+  border: none;
+}
+
+
+
+/* ===== RESET ===== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== PAGE BACKGROUND ===== */
+.contact-section{
+  min-height: 100vh;
+  background: radial-gradient(circle at right, #0b3d2e, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* ===== BLACK BOX ===== */
+.contact-box{
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px;
+  gap: 50px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+
+/* ===== LEFT ===== */
+.contact-left{
+  color: white;
+}
+
+.small-title{
+  color: #7CFFB2;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.contact-left h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.desc{
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.features{
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.features li{
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.contact-info p{
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+/* ===== RIGHT ===== */
+.contact-right input,
+.contact-right select,
+.contact-right textarea{
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  padding: 14px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.contact-right textarea{
+  resize: none;
+  height: 110px;
+  border-radius: 15px;
+}
+
+.row{
+  display: flex;
+  gap: 15px;
+}
+
+.checkbox{
+  font-size: 12px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.checkbox span{
+  color: #7CFFB2;
+}
+
+button{
+  background: #1db954;
+  color: black;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover{
+  background: #16a34a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px){
+  .contact-box{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* ================== LINKS ================== */
+.website .links{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.website .links ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.logo-name {
+  text-decoration: none;  /* underline ختم کرنے کے لیے */
+  color: white;           /* رنگ حسب ضرورت */
+  font-size: 20px;        /* فائن ٹیوننگ */
+  cursor: pointer;        /* ماؤس پر pointer آئے */
+}
+
+.logo-name:hover {
+  color: #f0f0f0;         /* hover effect optional */
+}
+
+
+/* ===== Page Fade-in from Bottom ===== */
+.fade-page {
+  opacity: 0;
+}
+
+.fade-page.active {
+  opacity: 1;
+  transition: opacity 2s ease;
+}

@@ -1,0 +1,385 @@
+body{
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+ /* ===== MENU CLICK SYSTEM ===== */
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 25px;
+  font-style: arial;
+}
+ .menu {
+  position: relative;
+}
+
+/* MENU BUTTON */
+.menu-name {
+  cursor: pointer;
+  position: relative;
+}
+
+/* LINE UNDER MENU */
+.menu-name .line {
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: 0.3s;
+}
+
+.menu-name:hover .line {
+  width: 100%;
+}
+
+/* CHILD NAV (hidden by default) */
+.child-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  gap: 40px;
+  align-items: center;
+}
+
+/* SHOW MENU */
+.menu.active .child-nav {
+  display: flex;
+}
+
+/* HIDE MENU TEXT */
+.menu.active .menu-name {
+  display: none;
+}
+
+/* NAV LINKS */
+.child-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  position: relative;
+}
+
+/* LINE UNDER EACH OPTION */
+.child-nav a .line {
+  width: 0;
+  height: 1px;
+  background: white;
+  margin-top: 4px;
+  transition: 0.3s;
+}
+
+.child-nav a:hover .line {
+  width: 100%;
+}
+
+
+/* ================== BUTTON ================== */
+
+.website .button button{
+  color: white;
+  padding: 6px 25px;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.website .button button:hover{
+  background-color: white;
+  color: black;
+}
+
+
+/* ================== FOOTER ================== */
+.website .footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 300px;
+  margin-top: 100px;
+  margin-left: 130px;
+}
+
+.website .footer .image img{
+  width: 180px;
+  height: 180px;
+}
+
+.website .footer .box{
+  font-size: 20px;
+}
+
+.website .footer .box button{
+  color: white;
+  padding: 6px 15px;
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin-top: 30px;
+   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.website .footer .box button:hover{
+  background-color: white;
+  color: black;
+}
+
+
+/* ================== LINKS ================== */
+.website .links{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.website .links ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ================== HR ================== */
+hr{
+  border: none;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
+}
+/* ================== HEADING ================== */
+.website .heading{
+  display: flex;
+  justify-content:space-between;
+  padding: 20px;
+}
+.website .heading .work{
+  font-size: 160px;
+  font-style: arial;
+  color: gray;
+}
+
+ .website .heading .view-toggle {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  border: 1px solid white;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.website .heading .view-toggle .toggle-btn {
+  padding: 8px 22px;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.website .heading .view-toggle .toggle-btn.active {
+  background: white;
+  color: black;
+}
+
+/* =========IMAGES SECTION========== */
+.website .work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  padding: 100px;
+}
+
+.website .work-grid .work-card {
+  position: relative;
+  height: 600px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* =========IMAGES BOTTOM SECTION============= */
+.work-card {
+  position: relative;
+  height: 460px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.work-card img,
+.work-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+/* video hidden by default */
+.work-card video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ACTIVE STATE */
+.work-card.is-active img {
+  filter: blur(7px);
+  transform: scale(1.06);
+}
+
+.work-card.is-active video {
+  opacity: 1;
+}
+
+
+.project {
+  margin-bottom: 80px;
+}
+
+.project-img img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* TEXT ROW */
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+/* LEFT NAME */
+.project-info .title {
+  font-size: 42px;
+  font-weight: 300;
+  color: #bfbfbf;
+  letter-spacing: 1px;
+}
+
+/* RIGHT YEAR */
+.project-info .year {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+/* MEDIA WRAP */
+.work-card .media {
+  position: relative;
+  height: 460px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+/* IMAGE + VIDEO */
+.work-card img,
+.work-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* VIDEO HIDDEN */
+.work-card video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.work-card.is-active img {
+  filter: blur(7px);
+  transform: scale(1.05);
+}
+
+.work-card.is-active video {
+  opacity: 1;
+}
+
+/* ===== TEXT BELOW IMAGE ===== */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.card-info .title {
+  font-size: 40px;
+  font-weight: 300;
+  color: #bfbfbf;
+  letter-spacing: 1px;
+}
+
+.card-info .year {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+
+/* ===== CUSTOM CURSOR DOT ===== */
+.cursor-dot {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== CURSOR CIRCLE ===== */
+.cursor-circle {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+   mix-blend-mode: difference;
+}
+.cursor-circle {
+  background: white;
+  border: none;
+}
+
+
+
+.logo-name {
+  text-decoration: none;  /* underline ختم کرنے کے لیے */
+  color: white;           /* رنگ حسب ضرورت */
+  font-size: 20px;        /* فائن ٹیوننگ */
+  cursor: pointer;        /* ماؤس پر pointer آئے */
+}
+
+.logo-name:hover {
+  color: #f0f0f0;         /* hover effect optional */
+}
+
+
+.fade-page {
+  opacity: 0;
+}
+
+.fade-page.active {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
